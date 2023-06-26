@@ -1,23 +1,40 @@
 # BentoML - classification model
 BentoML classification model train, test and build
 
+## Requirements
+- python
+- pip
+- pipenv (optional)
+- docker 
+
 
 ## Install
 
 ```bash
 pip install -r ./requirements.txt
 ```
-
+or with pipenv
+```bash
+pipenv install
+```
 
 ## Train
 ```bash
 python ./train.py
+```
+or with pipenv
+```bash
+pipenv run python ./train.py
 ```
 
 ## Run the service
 
 ```bash
 bentoml serve service.py:svc
+```
+or with pipenv
+```bash
+pipenv run bentoml serve service.py:svc
 ```
 
 ## Send test request
@@ -51,9 +68,17 @@ $ curl -X POST -H "content-type: application/json" --data '{"sepal_len": 6.2, "s
 ```
 bentoml build
 ```
+or with pipenv
+```bash
+pipenv run bentoml build
+```
 
 ## Build docker image
 
 ```
 bentoml containerize iris_classifier_pydantic:latest
+```
+or with pipenv
+```bash
+pipenv run bentoml containerize iris_classifier_pydantic:latest
 ```
